@@ -1,10 +1,10 @@
 import React from "react";
-import "./Footer.scss";
 import Image from "../../assets/amazon_inverse.svg";
 import jcbImage from "../../assets/jcb_inverse.svg";
 import mastercardImage from "../../assets/mastercard_inverse.svg";
 import paypalImage from "../../assets/paypal_inverse.svg";
 import visaImage from "../../assets/visa_inverse.svg";
+import "./Footer.scss";
 
 export default function Footer() {
   return (
@@ -12,7 +12,6 @@ export default function Footer() {
       <div className="footer-container">
         <div className="content">
           <div className="contact-info">Contact Info</div>
-
           <p>
             <b>Phone</b>: (+91) 9876543210
           </p>
@@ -23,14 +22,13 @@ export default function Footer() {
           <p>CA 96052, United State</p>
           <p>We accept:</p>
           <img src={Image} alt="gamepadImage logo" />
-          <img src={jcbImage} alt="gamepadImage logo" />
-          <img src={mastercardImage} alt="gamepadImage logo" />
-          <img src={paypalImage} alt="gamepadImage logo" />
-          <img src={visaImage} alt="gamepadImage logo" />
+          <img src={jcbImage} alt="jcbImage logo" />
+          <img src={mastercardImage} alt="mastercardImage logo" />
+          <img src={paypalImage} alt="paypalImage logo" />
+          <img src={visaImage} alt="visaImage logo" />
         </div>
         <div className="content">
           <div className="contact-info">Categories</div>
-
           <p>Men's clothing (4)</p>
           <p>Jewellery (4)</p>
           <p>Electronics (6)</p>
