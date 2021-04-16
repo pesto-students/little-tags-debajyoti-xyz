@@ -2,13 +2,13 @@ import React from "react";
 import Categories from "../Categories/Categories";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Hero from "../Hero/Hero";
+import Slides from "../Carousal/Slides";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <Hero />
+      <Slides />
       <Categories />
       <Footer />
     </div>
