@@ -1,0 +1,62 @@
+.sliderCSS {
+  position: relative;
+  height: 80vh;
+  width: 80vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.right {
+  right: 25px;
+}
+.left {
+  left: 25px;
+}
+.arrow-styling {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  transition: transform ease-in 0.1s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+img .transformleft {
+  transform: translateX(-2px);
+  &:focus {
+    outline: 0;
+  }
+}
+img .transformright {
+  transform: translateX(2px);
+  &:focus {
+    outline: 0;
+  }
+}
+.dots {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot {
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
