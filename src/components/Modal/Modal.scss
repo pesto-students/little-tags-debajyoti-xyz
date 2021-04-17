@@ -1,0 +1,38 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.modal-wrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: $z-index-modal;
+  background: $clr-modal-backdrop;
+  @include flex-center();
+}
+
+.modal {
+  padding: $spacing-large;
+  padding-top: $spacing-medium;
+  background-color: $clr-component-background;
+  min-width: $screen-xs;
+  text-align: left;
+  border-radius: $border-radius-2;
+
+  .modal-header {
+    position: relative;
+    padding-right: $spacing-medium;
+    
+    .modal-title {
+      display: inline-block;
+      margin-bottom: $spacing-medium;
+      font-size: $font-size-3;
+    }
+    .cross-btn {
+      position: absolute;
+      right: -20px;
+      top: -4px;
+    }
+  }
+}
