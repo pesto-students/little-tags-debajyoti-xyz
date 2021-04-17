@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
-
 .footer {
   background-color: #32353c;
   padding: 128px 49px;
@@ -44,8 +42,7 @@
     background-color: gray;
     margin-bottom: 60px;
   }
-  // Nested all style into .footer to stop styles from bleeding into other components
-  span {
+  .subscribe {
     padding: 25px 14.8px 23px 14.7px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   }
