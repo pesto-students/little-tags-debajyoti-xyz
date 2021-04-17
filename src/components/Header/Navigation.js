@@ -6,35 +6,23 @@ import * as ROUTES from "../../constants/routes";
 export default function Navigation() {
   return (
     <ul className="menu-bar">
-      <li style={{ fontWeight: "40px" }}>
-        <Link
-          style={{ textDecoration: "none", color: "black", fontWeight: "40px" }}
-          to={ROUTES.MEN}
-        >
+      <li className="menu-bar-styling">
+        <Link className="linkstyling" to={ROUTES.MEN}>
           MEN
         </Link>
       </li>
       <li>
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={ROUTES.WOMEN}
-        >
+        <Link className="linkstyling" to={ROUTES.WOMEN}>
           WOMEN
         </Link>
       </li>
       <li>
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={ROUTES.JEWELLERY}
-        >
+        <Link className="linkstyling" to={ROUTES.JEWELLERY}>
           JEWELLERY
         </Link>
       </li>
       <li>
-        <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={ROUTES.ELECTRONICS}
-        >
+        <Link className="linkstyling" to={ROUTES.ELECTRONICS}>
           ELECTRONICS
         </Link>
       </li>
