@@ -43,7 +43,7 @@ export default function Footer() {
             placeholder="Your Email address"
             required
           />
-          <span>Subscribe</span>
+          <span className="subscribe">Subscribe</span>
           <p>Keep up to date with our latest</p>
           <p>news and special offers.</p>
         </div>

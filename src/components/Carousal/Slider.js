@@ -45,6 +45,11 @@ const Slider = ({ slides }) => {
       translate: (activeIndex - 1) * getWidth(),
     });
   };
+  const contentis = slides.map((slide, i) => (
+    <Slide key={i} content={slide} alt={"icon"} />
+  ));
+  console.log("content is @@@", contentis);
+
   return (
     <div className="sliderCSS">
       <SliderContent
@@ -52,10 +57,9 @@ const Slider = ({ slides }) => {
         transition={transition}
         width={getWidth() * slides.length}
       >
-        {slides.map((slide, i) => (
-          <Slide key={slide + i} content={slide} />
-        ))}
+        {contentis}
       </SliderContent>
+
       <Arrow direction="left" handleClick={prevSlide} />
       <Arrow direction="right" handleClick={nextSlide} />
       <Dots slides={slides} activeIndex={activeIndex} />
