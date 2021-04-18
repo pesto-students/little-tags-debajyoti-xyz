@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import Slides from "../Carousal/Slides";
 
 export default function Home() {
+
   return (
     <div>
       <Header />

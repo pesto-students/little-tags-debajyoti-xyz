@@ -8,7 +8,7 @@ import "./Footer.scss";
 
 export default function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-container">
         <div className="content">
           <div className="contact-info">Contact Info</div>
@@ -53,6 +53,6 @@ export default function Footer() {
         <div>&copy;2020, KD Stores Website</div>
         <div>All Rights Reserved.</div>
       </div>
-    </div>
+    </footer>
   );
 }

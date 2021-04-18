@@ -1,0 +1,102 @@
+/**
+   Defines various variable so by including this file we can ensure consistency of color, spacing, z-index etc
+**/
+
+// #region colors
+$primary: black; // FIXME: lets identify our primary color
+
+$clr-component-background: white;
+$clr-modal-backdrop: rgba(0,0,0,.6);
+// #endregion
+
+// #region breakpoints
+/*
+    BREAKPOINTS
+    Taken from ant-design's
+*/
+// Media queries breakpoints
+// Extra small screen / phone
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+
+// Small screen / tablet
+$screen-sm: 576px;
+$screen-sm-min: $screen-sm;
+
+// Medium screen / desktop
+$screen-md: 768px;
+$screen-md-min: $screen-md;
+
+// Large screen / wide desktop
+$screen-lg: 992px;
+$screen-lg-min: $screen-lg;
+
+// Extra large screen / full hd
+$screen-xl: 1200px;
+$screen-xl-min: $screen-xl;
+
+// Extra extra large screen / large desktop
+$screen-xxl: 1600px;
+$screen-xxl-min: $screen-xxl;
+
+// provide a maximum
+$screen-xs-max: ($screen-sm-min - 1px);
+$screen-sm-max: ($screen-md-min - 1px);
+$screen-md-max: ($screen-lg-min - 1px);
+$screen-lg-max: ($screen-xl-min - 1px);
+$screen-xl-max: ($screen-xxl-min - 1px);
+
+// #endregion
+
+// #region font-size
+/*
+  TYPE SCALE
+   Docs: http://tachyons.io/docs/typography/scale/
+*/
+$font-size-1: 3rem;
+$font-size-2: 2.25rem;
+$font-size-3: 1.5rem;
+$font-size-4: 1.25rem;
+$font-size-5: 1rem;
+$font-size-6: .875rem;
+$font-size-7: .75rem; /* Small and hard to read for many people so use with extreme caution */
+// #endregion
+
+// #region spacing
+/*
+   SPACING
+   Docs: http://tachyons.io/docs/layout/spacing/
+
+   An eight step powers of two scale ranging from 0 to 16rem.
+*/
+$spacing-none: 0;
+$spacing-extra-small: .25rem;
+$spacing-small: .5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+$spacing-extra-large: 4rem;
+$spacing-extra-extra-large: 8rem;
+$spacing-extra-extra-extra-large: 16rem;
+// #endregion
+
+// #region z-index
+$z-index-modal: 1000;
+// #endregion
+
+
+// #region border-radius
+/*
+
+   BORDER RADIUS
+   Docs: http://tachyons.io/docs/themes/border-radius/
+*/
+$border-radius-0 : 0; 
+$border-radius-1 : .125rem; 
+$border-radius-2 : .25rem; 
+$border-radius-3 : .5rem; 
+$border-radius-4 : 1rem; 
+$border-radius-100 : 100%; 
+$border-radius-pill : 9999px; 
+// #endregion
+
+
