@@ -7,7 +7,7 @@ import { BsPersonFill } from "react-icons/bs";
 import websitelogo from "../../assets/websitelogo.png";
 export default function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <img
         src={websitelogo}
         style={{
@@ -15,26 +15,14 @@ export default function Header() {
           height: "60px",
           padding: "10px",
         }}
-        alt="WebsiteImage logo"
+        alt="Kool Dress logo"
       />
       <Navigation />
       <SearchBar />
-      <div className="login">
-        <BsPersonFill
-          size={70}
-          style={{
-            width: "30px",
-            height: "30px",
-            marginRight: "30px",
-            marginTop: "10px",
-          }}
-        />
-
-        <FaShoppingBag
-          size={70}
-          style={{ width: "30px", height: "30px", marginTop: "10px" }}
-        />
+      <div className="login-icon-group">
+        <BsPersonFill size={70} />
+        <FaShoppingBag size={70} />
       </div>
-    </div>
+    </header>
   );
 }

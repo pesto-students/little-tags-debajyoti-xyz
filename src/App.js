@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <hr />
         <Switch>
           <Route exact path={ROUTES.LOG_IN}>
             <h1>LOGIN PAGE</h1>
