@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import * as data from "../../data/data.json";
 import ProductCard from "../ProductCard/ProductCard";
+
 export default function Products() {
   let { category } = useParams();
   const [categoryData, setCategoryData] = useState([]);

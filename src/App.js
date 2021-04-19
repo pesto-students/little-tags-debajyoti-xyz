@@ -1,12 +1,12 @@
 import Home from "./components/Home/Home";
 import * as ROUTES from "./constants/routes";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "./App.scss";
 import ProductList from "./components/ProductList/ProductList";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
-import Products from "./components/Products/Products";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import "./App.scss";
+
 function App() {
   return (
     <div className="App">

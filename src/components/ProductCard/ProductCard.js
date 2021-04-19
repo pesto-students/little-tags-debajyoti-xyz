@@ -1,19 +1,14 @@
 import React from "react";
 import "./ProductCard.scss";
-import { Link, useRouteMatch, Switch, Route } from "react-router-dom";
-import * as ROUTES from "../../constants/routes";
-import ProductDetails from "../ProductDetails/ProductDetails";
+import { Link, useRouteMatch } from "react-router-dom";
 
 export default function ProductCard({ value }) {
-  let { path, url } = useRouteMatch();
-  console.log("inside product card", value.iden);
-  console.log("inside path", path);
+  let { match } = useRouteMatch();
   let id = value.iden;
-  console.log("inside url@@@@@@", url);
 
   return (
     <div className="products-card">
-      <Link to={`${url}/${id}`}>
+      <Link to={`${match.url}/${id}`}>
         <div>
           <img className="products-cover" src={value.image} alt={value.title} />
         </div>
