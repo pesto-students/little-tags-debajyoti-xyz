@@ -6,7 +6,7 @@ import Dots from "./Dots.js";
 import "./Slider.scss";
 const Slider = ({ slides }) => {
   const getWidth = () => window.innerWidth;
-  console.log("kirti", slides);
+
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
@@ -48,7 +48,6 @@ const Slider = ({ slides }) => {
   const contentis = slides.map((slide, i) => (
     <Slide key={i} content={slide} alt={"icon"} />
   ));
-  console.log("content is @@@", contentis);
 
   return (
     <div className="sliderCSS">

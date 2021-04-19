@@ -110,7 +110,6 @@ export const Slide = ({
 import React from "react";
 import "./Slider.scss";
 function Slide(props) {
-  console.log("contentt @@@@", props);
   const mystyling = {
     height: "100px",
     width: "100px",
