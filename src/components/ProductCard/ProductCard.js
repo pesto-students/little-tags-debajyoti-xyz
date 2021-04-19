@@ -4,9 +4,9 @@ import { Link, useRouteMatch } from "react-router-dom";
 
 export default function ProductCard({ value }) {
   let { path, url } = useRouteMatch();
-
   let id = value.iden;
-
+  console.log("match the url", url);
+  console.log("match the path", path);
   return (
     <div className="products-card">
       <Link to={`${url}/${id}`}>
