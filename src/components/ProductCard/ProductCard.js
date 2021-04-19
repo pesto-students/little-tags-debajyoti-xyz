@@ -3,12 +3,13 @@ import "./ProductCard.scss";
 import { Link, useRouteMatch } from "react-router-dom";
 
 export default function ProductCard({ value }) {
-  let { match } = useRouteMatch();
+  let { path, url } = useRouteMatch();
+
   let id = value.iden;
 
   return (
     <div className="products-card">
-      <Link to={`${match.url}/${id}`}>
+      <Link to={`${url}/${id}`}>
         <div>
           <img className="products-cover" src={value.image} alt={value.title} />
         </div>
