@@ -6,3 +6,4 @@ export const ELECTRONICS = "/products/electronics";
 export const MEN = "/products/men";
 export const JEWELLERY = "/products/jewellery";
 export const WOMEN = "/products/women";
+export const PRODUCTDETAILS = "/products/:category/:id";

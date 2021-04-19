@@ -8,11 +8,11 @@ export default function SearchBar() {
         <input
           type="text"
           placeholder="Search for products"
-          class="desktop-search-bar"
+          className="desktop-search-bar"
           value={""}
         />
       </label>
-      <span class="search-icon">
+      <span className="search-icon">
         <SearchIconLogo />
       </span>
     </div>

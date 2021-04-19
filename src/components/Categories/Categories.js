@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../../constants/routes";
 import JewelleryImage from "../../assets/jewellers.jpg";
 import "./Categories.scss";
 
@@ -12,7 +14,9 @@ export default function Categories() {
           alt={"Carlie Anglemire"}
         />
         <div className="category-button">
-          <button>WOMEN</button>
+          <Link to={`${ROUTES.PRODUCTS}/women`}>
+            <button>WOMEN</button>
+          </Link>
         </div>
       </div>
       <div className="category-img">
@@ -22,13 +26,17 @@ export default function Categories() {
           alt={"Carlie Anglemire"}
         />
         <div className="category-button">
-          <button>MEN</button>
+          <Link to={`${ROUTES.PRODUCTS}/men`}>
+            <button>MEN</button>
+          </Link>
         </div>
       </div>
       <div className="category-img">
         <img className="profile-photo" src={JewelleryImage} alt={""} />
         <div className="category-button">
-          <button>JEWELLERY</button>
+          <Link to={`${ROUTES.PRODUCTS}/jewellery`}>
+            <button>JEWELLERY</button>
+          </Link>
         </div>
       </div>
       <div className="category-img">
@@ -40,7 +48,9 @@ export default function Categories() {
           alt={""}
         />
         <div className="category-button">
-          <button>ELECTRONICS</button>
+          <Link to={`${ROUTES.PRODUCTS}/electronics`}>
+            <button>ELECTRONICS</button>
+          </Link>
         </div>
       </div>
     </div>
