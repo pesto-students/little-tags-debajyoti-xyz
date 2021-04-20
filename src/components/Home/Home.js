@@ -1,11 +1,11 @@
 import React from "react";
 import Categories from "../Categories/Categories";
-import Slides from "../Carousal/Slides";
+import Slider from "../Carousal/Slider";
 
 export default function Home() {
   return (
     <div>
-      <Slides />
+      <Slider sliderWidth="1500" sliderHeight="750" />
       <Categories />
     </div>
   );

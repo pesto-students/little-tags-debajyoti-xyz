@@ -15,6 +15,7 @@
 .arrow-styling {
   display: flex;
   position: absolute;
+  z-index: 2 !important;
   top: 50%;
   height: 50px;
   width: 50px;
@@ -59,4 +60,23 @@ img .transformright {
 }
 .white {
   color: white;
+}
+.homeslider-wrapper {
+  width: 1500px;
+  height: 750px;
+
+  overflow: hidden;
+  border-radius: 4px !important;
+}
+.slider-item-homepage {
+  float: left;
+  position: relative;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 250px;
+  font-size: 20px;
+
+  text-align: center;
+  border-radius: 4px !important;
+  transition: all 0.2s linear;
 }

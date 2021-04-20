@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Slide from "./Slide.js";
-import Arrow from "./Arrow.js";
-import Dots from "./Dots.js";
+
 import "./Slider.scss";
 
 export default class Slider extends Component {
@@ -11,15 +9,21 @@ export default class Slider extends Component {
     this.state = {
       activeIndex: 1,
       left: 0,
-      slider: [
-        "http://www.shopatkerala.com/uploads/client_banner/home_page_banner1.jpg",
-
-        "https://storage.sg.content-cdn.io/in-resources/479f9d71-0a21-4015-aac2-ef0b75d4cc3e/Images/userimages/banners/new_arrivals_21july.jpg",
-        "https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80",
-      ],
+      slider: ["first", "second", "third", "fourth", "fifth"],
     };
     console.log("props   @@@@@", props);
+    const { sliderWidth, sliderHeight } = props;
+    console.log("sliderWidth   @@@@@", sliderWidth);
+    console.log("sliderHeight   @@@@@", sliderHeight);
   }
+
+  /* getInitialState = () => {
+    return {
+      slider: ["first", "second", "third", "fourth", "fifth"],
+      activeIndex: 1,
+      left: 0,
+    };
+  }; */
 
   prevSlide = () => {
     this.setState({
@@ -59,13 +63,13 @@ export default class Slider extends Component {
   };
   render() {
     var mystyle = {
-      width: "1500px",
-      height: "750px",
+      width: "400px",
+      height: "240px",
       left: this.state.left,
     };
     return (
       <div>
-        <div className="homeslider-wrapper">
+        <div className="slider-wrapper">
           <ul className="slider">
             {this.state.slider.map(function (item, index) {
               return (
@@ -73,19 +77,38 @@ export default class Slider extends Component {
                   style={mystyle}
                   className={
                     index + 1 === this.state.activeIndex
-                      ? "slider-item-homepage"
+                      ? "slider-item"
                       : "hide"
                   }
                 >
-                  <img src={item} alt="" className="image" width="100%" />
+                  {item}
                 </li>
               );
             }, this)}
           </ul>
         </div>
-        <Arrow direction="left" handleClick={this.prevSlide} />
-        <Arrow direction="right" handleClick={this.nextSlide} />
-        {/* <Dots slides={this.slider} activeIndex={this.state.activeIndex} /> */}
+        <div className="buttons-wrapper">
+          <button className="prev-button" onClick={this.prevSlide}></button>
+          <button className="next-button" onClick={this.nextSlide}></button>
+        </div>
+        <div className="indicators-wrapper">
+          <ul className="indicators">
+            {this.state.slider.map(function (item, index) {
+              return (
+                <li
+                  className={
+                    index + 1 === this.state.activeIndex
+                      ? "active-indicator"
+                      : ""
+                  }
+                  onClick={this.clickIndicator}
+                >
+                  {index + 1}
+                </li>
+              );
+            }, this)}
+          </ul>
+        </div>
       </div>
     );
   }
