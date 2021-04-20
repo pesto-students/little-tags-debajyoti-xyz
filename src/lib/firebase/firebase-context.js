@@ -2,7 +2,6 @@ import { createContext } from "react";
 
 /**
  * Mocked Firebase class object, only for auto-complete
- * @type {Firebase}
  */
 const initialValue = {
   /**
@@ -25,6 +24,7 @@ const initialValue = {
    */
   onAuthChangeListener: (next, fallback) => {},
 };
+
 
 const FirebaseContext = createContext(initialValue);
 
