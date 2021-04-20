@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Slide from "./Slide.js";
 import Arrow from "./Arrow.js";
-import Dots from "./Dots.js";
 import "./Slider.scss";
 
 export default class Slider extends Component {
@@ -85,7 +83,6 @@ export default class Slider extends Component {
         </div>
         <Arrow direction="left" handleClick={this.prevSlide} />
         <Arrow direction="right" handleClick={this.nextSlide} />
-        {/* <Dots slides={this.slider} activeIndex={this.state.activeIndex} /> */}
       </div>
     );
   }
