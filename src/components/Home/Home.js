@@ -1,17 +1,12 @@
 import React from "react";
 import Categories from "../Categories/Categories";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import Slides from "../Carousal/Slides";
+import Slider from "../Carousal/Slider";
 
 export default function Home() {
-
   return (
     <div>
-      <Header />
-      <Slides />
+      <Slider sliderWidth="1500" sliderHeight="750" />
       <Categories />
-      <Footer />
     </div>
   );
 }
