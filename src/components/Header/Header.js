@@ -12,17 +12,21 @@ export default function Header() {
         <img
           src={websitelogo}
           style={{
-            width: "60px",
-            height: "60px",
-            padding: "10px",
+            width: "60px"
           }}
           alt="Kool Dress logo"
         />
         <Navigation />
         <SearchBar />
         <div className="login-icon-group">
-          <BsPersonFill size={70} />
-          <FaShoppingBag size={70} />
+          <div className="labeled-icon">
+            <span>Login / Signup</span>
+            <BsPersonFill />
+          </div>
+          <div className="labeled-icon">
+            <span>Bag</span>
+            <FaShoppingBag />
+          </div>
         </div>
       </div>
     </header>

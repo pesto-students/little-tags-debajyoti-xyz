@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     // max-width: 1000px;
-    margin-left: 80px;
+    padding: 10px 40px;
   }
 
   .desktop-search-bar {
@@ -28,7 +28,7 @@
   }
 
   .search-bar {
-    flex: 1 30%;
+    flex: 1 10%;
     position: relative;
     border-radius: 50px;
   }
@@ -50,14 +50,27 @@
   .login-icon-group {
     flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+
+    .labeled-icon {
+      display: flex;
+      align-items: center;
+      margin-left: 18px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      & > span {
+        display: block;
+        margin-right: 8px;
+        // line-height: 30px;
+      }
+    }
 
     svg {
       display: block;
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      margin-left: 18px;
+      width: 24px;
+      height: 24px;
     }
   }
 
