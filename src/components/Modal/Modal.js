@@ -22,6 +22,9 @@ const Modal = ({ isOpen, onClose, title, children }) => {
 };
 
 Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  title: PropTypes.string,
   children: PropTypes.element,
 };
 
