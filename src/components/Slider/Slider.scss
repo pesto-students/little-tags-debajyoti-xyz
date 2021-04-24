@@ -9,7 +9,6 @@ body,
 html {
   width: 100%;
   height: 100%;
-  font-family: arial;
 }
 
 #app {
@@ -22,16 +21,27 @@ html {
 }
 
 .slider-wrapper {
-  width: 400px;
-  height: 250px;
-
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 400px;
+  border: 2px solid #eee;
+  border-radius: 5px;
   overflow: hidden;
-  border-radius: 4px !important;
+  // width: 400px;
+  // height: 544px;
+  //overflow: hidden;
+  // border-radius: 4px !important;
+
+  // margin: auto;
 }
 
 .slider {
-  width: 2000px;
+  width: 4000px;
+  //width: 100%;
   position: relative;
+  overflow: hidden;
+  bottom: 130px;
 }
 
 .slider-item {
@@ -41,7 +51,7 @@ html {
   color: #fff;
   line-height: 250px;
   font-size: 20px;
-  background: #383838;
+
   text-align: center;
   border-radius: 4px !important;
   transition: all 0.2s linear;
@@ -52,11 +62,11 @@ html {
 }
 
 .buttons-wrapper {
-  width: 400px;
+  width: 607px;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  top: 50%;
+  top: 60%;
   margin-top: -204px;
 }
 
@@ -88,7 +98,7 @@ html {
 .indicators {
   width: 400px;
   position: absolute;
-
+  left: 17%;
   z-index: 2 !important;
   text-align: center;
 }
@@ -116,6 +126,11 @@ html {
 .active-indicator {
   background: rgba(0, 0, 0, 0.3) !important;
   color: #fff !important;
+}
+.slider img {
+  max-width: 100%;
+  max-height: 400px;
+  min-height: 350px;
 }
 
 /* indicators */
