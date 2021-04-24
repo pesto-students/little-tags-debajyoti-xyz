@@ -3,12 +3,38 @@
 .login-signup-container {
     display: flex;
 
-    .action-area {
+    .slogan {
+        font-size: $font-size-3;
+        margin-top: $spacing-large;
+        margin-bottom: $spacing-large;
+    }
 
+    .action-area {
+        flex: 1 60%;
+        order: 2;
+        border-left: 1px solid rgba(33, 33, 33, .25);
+        margin-left: $spacing-extra-large;
+        padding: $spacing-medium;
+        padding-bottom: $spacing-extra-extra-large;
+        text-align: center;
+
+
+        button {
+            text-align: left;
+            min-width: 350px;
+            &:not(:last-of-type) {
+                margin-bottom: $spacing-medium;
+            }
+        }
     }
 
     .illustration {
-        
+        flex: 1 20%;
+        order: 1;
+        height: 100%;
+        background: url("../../assets/Signup.svg") no-repeat;
+        min-width: 200px;
+        min-height: 200px;
     }
 }
 

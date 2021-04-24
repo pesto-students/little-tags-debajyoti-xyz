@@ -1,0 +1,18 @@
+@use "./variables.scss";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// See https://stackoverflow.com/a/38368130/2382629
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+
+// Taken from https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}

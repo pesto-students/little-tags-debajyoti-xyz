@@ -8,9 +8,17 @@ const Modal = ({ isOpen, onClose, title, children }) => {
     return null;
   }
 
+  const handleKeyPress = (evt) => {
+    console.log(evt)
+  }
+
+  const trapClick = (e) => {
+    e.stopPropagation();
+  }
+
   return (
-    <div className="modal-wrapper" onClick={onClose}>
-      <div className="modal">
+    <div className="modal-wrapper" onClick={onClose} onKeyPress={handleKeyPress}>
+      <div className="modal" onClick={trapClick}>
         <div className="modal-header">
           <span className="modal-title">{title}</span>
           <BsX className="cross-btn" size={24} role="button" />

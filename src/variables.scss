@@ -54,6 +54,7 @@ $screen-xl-max: ($screen-xxl-min - 1px);
   TYPE SCALE
    Docs: http://tachyons.io/docs/typography/scale/
 */
+$base-font-size: 16px;
 $font-size-1: 3rem;
 $font-size-2: 2.25rem;
 $font-size-3: 1.5rem;
@@ -98,6 +99,12 @@ $border-radius-3 : .5rem;
 $border-radius-4 : 1rem; 
 $border-radius-100 : 100%; 
 $border-radius-pill : 9999px; 
+// #endregion
+
+
+
+// #region animations
+$transition-time: 350ms;
 // #endregion
 
 

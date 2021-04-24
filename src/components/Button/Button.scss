@@ -1,24 +1,112 @@
 @import "../../variables.scss";
 
+$icon-size-sm: $spacing-small;
+$icon-size-md: $spacing-medium;
+$icon-size-lg: $spacing-large;
+$icon-spacing-sm: (0.25rem / 2);
+$icon-spacing-md: (0.5rem / 2);
+$icon-spacing-lg: (1rem / 2);
+
 .button {
-    // Common Style
-    outline: none;
-    border-radius: $border-radius-1;
+  // Common Style
+  outline: none;
+  cursor: pointer;
+  border-radius: $border-radius-2;
+  transition: all $transition-time;
+  text-transform: uppercase;
 
-    // Style for different states
-    &:disabled {}
-    // Same style for hover & focus
-    &:hover, &:focus {}
-    &:active {}
+  // Style for different states
+  &:disabled {
+  }
+  // Same style for hover & focus
+  &:hover,
+  &:focus {
+    // transform: scale(1.02);
+  }
+  &:active {
+  }
 
+  // Style specialization
+  &.btn-primary {
+  }
+  &.btn-outline {
+    background: transparent;
+    border: 0.125rem solid $primary;
+    transition: none;
 
-    // Style specialization
-    &.btn-primary {}
-    &.btn-outline {}
-    &.btn-text {}
+    &:hover, &:focus {
+      border-width: 0.25rem;
+    }
+  }
+  &.btn-text {
+  }
 
-    // Size specialization
-    &.btn-sm {}
-    &.btn-md {}
-    &.btn-lg {}
+  &.btn-icon {
+    position: relative;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // Size specialization
+  &.btn-sm {
+    padding: $spacing-extra-small;
+
+    &.btn-icon {
+      padding-left: ($icon-size-sm + ($icon-spacing-sm * 2));
+    }
+
+    .icon {
+      left: $icon-spacing-sm;
+      width: $icon-size-sm;
+      height: $icon-size-sm;
+    }
+  }
+  &.btn-md {
+    padding: $spacing-small;
+
+    &.btn-icon {
+      padding-left: ($icon-size-md + ($icon-spacing-md * 2));
+    }
+
+    .icon {
+      left: $icon-spacing-md;
+      width: $icon-size-md;
+      height: $icon-size-md;
+    }
+  }
+
+  &.btn-lg {
+    font-size: $font-size-4;
+    
+
+    &.btn-outline {
+      padding: $spacing-medium;
+      &:hover, &:focus {
+        padding: ($spacing-medium - 0.125rem);
+      }
+
+      &.btn-icon:hover, &.btn-icon:focus {
+        padding-left: ($icon-size-lg + ($icon-spacing-lg * 2) - 0.125rem);
+      }
+
+    }
+
+    &.btn-icon {
+      padding-left: ($icon-size-lg + ($icon-spacing-lg * 2));
+
+      .label {
+          padding-left: $spacing-extra-small;
+      }
+    }
+
+    .icon {
+      left: $icon-spacing-lg;
+      width: $icon-size-lg;
+      height: $icon-size-lg;
+    }
+  }
 }
