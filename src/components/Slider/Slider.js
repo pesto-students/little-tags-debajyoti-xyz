@@ -1,115 +1,111 @@
-import React, { Component } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import * as data from "../../data/data.json";
 import "./Slider.scss";
 
-export default class Slider extends Component {
-  constructor(props) {
-    console.log("props   @", props);
-    super(props);
-    this.state = {
-      activeIndex: 1,
-      left: 0,
-      slider: ["first", "second", "third", "fourth", "fifth"],
-    };
-    console.log("props   @@@@@", props);
-    const { sliderWidth, sliderHeight } = props;
-    console.log("sliderWidth   @@@@@", sliderWidth);
-    console.log("sliderHeight   @@@@@", sliderHeight);
+export default function Slider({ sliderWidth, sliderHeight }) {
+  const [activeIndex, setActiveIndex] = useState(1);
+  const [left, setLeft] = useState(0);
+  const [slider, setSlider] = useState([
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+  ]);
+  const [dataItem, setDataItem] = useState([]);
+
+  let { category, id } = useParams();
+  console.log("printing id", parseInt(id));
+  console.log("type of", typeof parseInt(id));
+  console.log("printing category", category);
+  console.log("set slider", setSlider);
+  if (category === "jewellery") {
+    category = "jewelery";
   }
 
-  /* getInitialState = () => {
-    return {
-      slider: ["first", "second", "third", "fourth", "fifth"],
-      activeIndex: 1,
-      left: 0,
-    };
-  }; */
+  useEffect(() => {
+    console.log("data is", data.default);
+    const filteredProduct = data.default.filter((value) =>
+      value.category.includes(category)
+    );
 
-  prevSlide = () => {
-    this.setState({
-      activeIndex: this.state.activeIndex - 1,
-      left: this.state.left + 400, // this.props.sliderWidth not working for some reason
-    });
-    if (this.state.activeIndex === 1) {
-      this.setState({
-        activeIndex: this.state.activeIndex + this.state.slider.length - 1,
-        left:
-          this.state.left -
-          this.props.sliderWidth * (this.state.slider.length - 1),
-      });
+    console.log("filteredProduct", filteredProduct);
+    setDataItem(filteredProduct[id - 1]);
+  }, [category, id]);
+
+  const prevSlide = () => {
+    setActiveIndex(activeIndex - 1);
+    setLeft(left + (parseInt(sliderWidth) - 230 + activeIndex * 20));
+
+    if (activeIndex === 1) {
+      setActiveIndex(activeIndex + slider.length - 1);
+      setLeft(left - parseInt(sliderWidth) * (slider.length - 1));
     }
   };
 
-  nextSlide = () => {
-    this.setState({
-      activeIndex: this.state.activeIndex + 1,
-      left: this.state.left - this.props.sliderWidth,
-    });
-    if (this.state.activeIndex === this.state.slider.length) {
-      this.setState({
-        activeIndex: this.state.activeIndex - this.state.slider.length + 1,
-        left: 0,
-      });
+  const nextSlide = () => {
+    setActiveIndex(activeIndex + 1);
+    setLeft(left - (parseInt(sliderWidth) + 230 + activeIndex * 20));
+
+    if (activeIndex === slider.length) {
+      setActiveIndex(activeIndex - slider.length + 1);
+      setLeft(0);
     }
   };
 
-  clickIndicator = (e) => {
-    this.setState({
-      activeIndex: parseInt(e.target.textContent),
-      left:
-        this.props.sliderWidth -
-        parseInt(e.target.textContent) * this.props.sliderWidth,
-    });
+  const clickIndicator = (e) => {
+    setActiveIndex(parseInt(e.target.textContent));
+    setLeft(sliderWidth - parseInt(e.target.textContent) * sliderWidth);
   };
-  render() {
-    var mystyle = {
-      width: "400px",
-      height: "240px",
-      left: this.state.left,
-    };
-    return (
-      <div>
+  var mystyle = {
+    width: `${sliderWidth}px`,
+    height: `${sliderHeight}px`,
+    left: left,
+    margin: "140px",
+  };
+
+  return (
+    <div className="sec-half">
+      <center>
         <div className="slider-wrapper">
           <ul className="slider">
-            {this.state.slider.map(function (item, index) {
+            {slider.map(function (item, index) {
               return (
                 <li
                   style={mystyle}
-                  className={
-                    index + 1 === this.state.activeIndex
-                      ? "slider-item"
-                      : "hide"
-                  }
+                  className={index + 1 === activeIndex ? "slider-item" : "hide"}
                 >
-                  {item}
+                  <img
+                    src={dataItem.image}
+                    alt=""
+                    className="image"
+                    width="100%"
+                  />
                 </li>
               );
             }, this)}
           </ul>
         </div>
-        <div className="buttons-wrapper">
-          <button className="prev-button" onClick={this.prevSlide}></button>
-          <button className="next-button" onClick={this.nextSlide}></button>
-        </div>
-        <div className="indicators-wrapper">
-          <ul className="indicators">
-            {this.state.slider.map(function (item, index) {
-              return (
-                <li
-                  className={
-                    index + 1 === this.state.activeIndex
-                      ? "active-indicator"
-                      : ""
-                  }
-                  onClick={this.clickIndicator}
-                >
-                  {index + 1}
-                </li>
-              );
-            }, this)}
-          </ul>
-        </div>
+      </center>
+      <div className="buttons-wrapper">
+        <button className="prev-button" onClick={prevSlide}></button>
+        <button className="next-button" onClick={nextSlide}></button>
       </div>
-    );
-  }
+      <div className="indicators-wrapper">
+        <ul className="indicators">
+          {slider.map(function (item, index) {
+            return (
+              <li
+                className={index + 1 === activeIndex ? "active-indicator" : ""}
+                onClick={clickIndicator}
+              >
+                {index + 1}
+              </li>
+            );
+          }, this)}
+        </ul>
+      </div>
+    </div>
+  );
 }
